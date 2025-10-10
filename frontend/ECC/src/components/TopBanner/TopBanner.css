@@ -4,7 +4,7 @@
     background: linear-gradient(0deg,rgba(183, 119, 213, 1) 0%, rgba(241, 140, 164, 1) 100%);
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 150px;
     z-index: 1000;
     align-items: center;
     text-align: center;
@@ -17,4 +17,7 @@
 .quote{
     font-size: 25px;
     font-family:sans-serif;
+}
+.logo{
+    display: inline-block;
 }

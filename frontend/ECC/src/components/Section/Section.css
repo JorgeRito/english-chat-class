@@ -1,0 +1,30 @@
+p{
+    margin-left: 10px;
+}
+
+.section{
+    padding: 30px;
+}
+.left{
+    height: 400px;
+    display: flex;
+    justify-content:center;
+}
+
+.right{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.info-container{
+    background-color: gray;
+    text-align: justify;
+    width: 50%;
+}
+
+.img-container{
+    background-color: black;
+    width: 30%;
+}
