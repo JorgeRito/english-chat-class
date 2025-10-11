@@ -1,12 +1,15 @@
 import "./TopBanner.css";
 import NavBar from "../NavBar/CustomButton/NavBar";
 
-export default function TopBanner() {
+export default function TopBanner(
+  {temp}:{temp:React.RefObject<HTMLDivElement | null>[]}
+) {
   return (
     <>
       <div className="top-banner">
-        <div style={{display: 'flex', justifyContent: "center"}}>
-        <img className="logo" src={"frontend/ECC/src/assets/ECC_Logo.jpg"} alt="Image not loading"/>
+        <div className="logo-container">
+          <img src="ecc_logo.jpg" />
+        </div>
         <div>
           <label className="top-banner-text">
             <b>English Chat Class</b>
@@ -15,10 +18,9 @@ export default function TopBanner() {
             <label className="quote">¡Habla Inglés sin salir de casa!</label>
           </div>
         </div>
-        </div>
       </div>
 
-      <NavBar />
+      <NavBar temp={temp}/>
     </>
   );
 }

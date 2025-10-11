@@ -1,16 +1,69 @@
 import TopBanner from "./components/TopBanner/TopBanner";
-
-import { Section } from "./components/Section/Section";
-import "../src/components/Section/Section.css"
-
+import { ContentCard } from "./components/ContentCard/ContentCard";
+import "../src/components/ContentCard/ContentCard.css"
+import React, { useRef } from "react";
+// {ref}:{ref:React.RefObject<HTMLDivElement | null>}
+export const handleScrollToSection = (ref:React.RefObject<HTMLDivElement | null>) => {
+  if(ref?.current){
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
+  }
+};
 function App() {
-  const placeholder = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  const ref1 = useRef<HTMLDivElement | null>(null);
+  const ref2 = useRef<HTMLDivElement | null>(null);
+  const ref3 = useRef<HTMLDivElement | null>(null);
+  const ref4 = useRef<HTMLDivElement | null>(null);
+  const refs = [
+    ref1,
+    ref2,
+    ref3,
+    ref4,
+  ]
+
+  const info = [
+    {
+      title: "Bienvenido",
+      content: "Breve bienvenida al usuario",
+      className: "left",
+      img: ""
+    },
+    {
+      title: "¿Quienes somos?",
+      content: "Informacion general",
+      className: "right",
+      img: ""
+    },
+    {
+      title: "Conoce al equipo",
+      content: "Introduccion breve sobre profesores",
+      className: "left",
+      img: ""
+    },
+    {
+      title: "Contáctanos",
+      content: "Informacion de contacto, tanto redes como numero telefonico",
+      className: "right",
+      img: ""
+    },
+  ];
+
   return (
-    <>
-      <TopBanner />
-      <Section className="left" title="Titulo de relleno" content={placeholder}/>
-      <Section className="right" title="Titulo de relleno" content={placeholder}/>
-    </>
+    <main>
+      <TopBanner temp={refs}/>
+      {info.map((item) => (
+        <div ref={refs[info.indexOf(item)]} className="section" key={info.indexOf(item)}>
+          <ContentCard
+            className={item.className}
+            title={item.title}
+            content={item.content}
+            img=""
+          />
+        </div>
+      ))}
+    </main>
   );
 }
 

@@ -1,4 +1,11 @@
 #root {
+    --ecc-light-purple: #F8E9FE;
+  --ecc-purple: #EDD9F5;
+  --ecc-dark-purple: #2A1D4E;
+  --ecc-dark-orange: #F26051;
+  --ecc-orange: #FFAC68;
+  --ecc-logo-top: #F38DA3;
+  --ecc-logo-bottom: #B777D5;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
