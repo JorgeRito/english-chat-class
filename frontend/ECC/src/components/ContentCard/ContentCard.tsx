@@ -2,7 +2,7 @@ export function ContentCard({
   className,
   title,
   content,
-  img
+  // img
 }: {
   className: string;
   title: string;

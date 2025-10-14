@@ -1,13 +1,21 @@
 import { useState } from "react";
 import "./navBar.css";
-import { handleScrollToSection } from "../../../App";
+// import { handleScrollToSection } from "../../../App";
 const options: string[] = [
-  // "INICIO",
+  "INICIO",
   "QUIENES SOMOS",
-  "TESTIMONIOS",
+  // "TESTIMONIOS",
   "CONÓCENOS",
   "CONTÁCTANOS",
 ];
+const handleScrollToSection = (ref:React.RefObject<HTMLDivElement | null>) => {
+  if(ref?.current){
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
+  }
+};
 
 export default function NavBar(
   {temp}:{temp:React.RefObject<HTMLDivElement | null>[]}
