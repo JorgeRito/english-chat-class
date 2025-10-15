@@ -25,7 +25,7 @@ function App() {
         "Bienvenido a English Chat Class, el espacio donde aprender inglés se convierte en una experiencia dinámica, práctica y enfocada en la conversación real. Nuestras clases en vivo te permitirán mejorar tu fluidez, comprensión y confianza al hablar, con la guía de profesores calificados y un ambiente interactivo que se adapta a tu ritmo y objetivos personales. Aprende inglés desde cualquier lugar y conéctate con personas que, como tú, buscan avanzar profesional y personalmente a través del idioma.",
       content2: [],
       className: "left",
-      img: "english-chat-class/opportunities.jpg"
+      img: "opportunities.jpg"
     },
     {
       title: "¿Quienes somos?",
@@ -33,7 +33,7 @@ function App() {
         "Somos una escuela de inglés 100% en línea especializada en clases en vivo. Creemos que la mejor forma de dominar un idioma es a través de la práctica constante y la interacción real. Nuestro método se centra en la comunicación efectiva: no solo aprenderás gramática o vocabulario, sino que desarrollarás la habilidad de pensar y expresarte en inglés con naturalidad.",
       content2: [],
       className: "right",
-      img: "english-chat-class/teacher.png"
+      img: "teacher.png"
     },
     {
       title: "Conoce al equipo",
@@ -41,7 +41,7 @@ function App() {
         "Nuestro equipo está formado por profesores certificados y con amplia experiencia en la enseñanza del inglés a estudiantes de distintos niveles y contextos. Cada miembro de English Chat Class comparte un mismo objetivo: ayudarte a alcanzar la confianza necesaria para comunicarte en inglés en cualquier situación. Más que maestros, somos mentores y compañeros de aprendizaje que te guiarán con paciencia, motivación y estrategias prácticas adaptadas a tus necesidades.",
       content2: [],
       className: "left",
-      img: "english-chat-class/class.png"
+      img: "class.png"
     }
   ];
 
@@ -80,7 +80,7 @@ function App() {
             </p>
           </div>
           <div className="img-container">
-            <img src="https://scontent.cdninstagram.com/v/t51.82787-15/539788976_17852034603533292_7395076011169272515_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzcwNzQ0OTYwNTE3ODk2NjY3NQ%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTA4MC5zZHIuQzMifQ%3D%3D&_nc_ohc=LaSo-XziUdEQ7kNvwGA83nB&_nc_oc=Adnn-TXBzBi2oEcrzkKi2T1SAmAHxa7n9QnWBsQUtUsR3BYeLQts4NA4ZjZYSZRjBug&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=IbO-CJ_ELcxGgdfAZ8RIwg&oh=00_AfeOW3VN9b2N4Ez43HiH1CHw7q3zNj-ptsei-Gb3qw8GCg&oe=68F48ED9"></img>
+            <img src="contact.jpg"></img>
           </div>
         </div>
       </div>
