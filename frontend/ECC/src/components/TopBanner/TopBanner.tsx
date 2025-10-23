@@ -10,14 +10,14 @@ export default function TopBanner({
     <>
       <div className="top-banner">
         <div className="logo-container">
-          <img src="/english-chat-class/ecc_logo.jpg" />
+          <img src="/english-chat-class/ecc_logo.png" />
         </div>
-        <div>
+        <div className="text-container">
           <label className="top-banner-text">
             <b>English Chat Class</b>
           </label>
-          <div>
-            <label className="quote">¡Habla Inglés sin salir de casa!</label>
+          <div className="quote">
+            <label>¡Habla Inglés desde donde estés!</label>
           </div>
         </div>
       </div>

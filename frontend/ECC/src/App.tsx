@@ -50,6 +50,7 @@ function App() {
       <TopBanner temp={refs} />
       {info.map((item) => (
         <div
+          style={{width: "100%"}}
           ref={refs[info.indexOf(item)]}
           className="section"
           key={info.indexOf(item)}

@@ -52,16 +52,20 @@
 }
 
 @media (max-width: 547px){
+
     .section{
         padding-top: 15px;
         padding-left: 5px;
         padding-right: 5px;
-        padding-bottom: 15px;
+        padding-bottom: 7.5px;
     }
 
     .img-container{
         position: relative;
         overflow: hidden;
+    }
+    .info-container{
+        font-size: 12px;
     }
     .img-container img{
         object-fit: fill;
@@ -71,7 +75,7 @@
     }
 
     h1{
-        font-size: 26px;
+        font-size: 18px;
     }
     .info-container{
         width: 59%;
@@ -79,11 +83,16 @@
     .img-container{
         width: 41%;
     }
+    .img-container img{
+        width: 100%;
+    }
     .left{
-        height: 400px;
+        border-radius: 8px;
+        height: 330px;
     }
     .right{
-        height: 400px;
+        border-radius: 8px;
+        height: 330px;
     }
 }
 @media (min-width:547px) and (max-width: 768px){

@@ -16,7 +16,9 @@
   /* background-color: var(--ecc-light-purple); */
   background: linear-gradient(
     180deg,
-    var(--ecc-logo-bottom) 20%, 
+    rgba(242, 140, 162, 1) 0%,
+    rgba(242, 140, 162, 1) 1%,
+    var(--ecc-logo-bottom) 13%, 
     var(--ecc-light-purple) 80%);
 
   font-synthesis: none;
