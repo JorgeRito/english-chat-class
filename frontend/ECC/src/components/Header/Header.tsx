@@ -1,0 +1,27 @@
+export function Header() {
+  return (
+    <header className="header">
+      <div className="brand">
+        <img
+          className="logo"
+          src="/english-chat-class/ecc_logo.png"
+          alt="English Chat Class"
+        />
+        {/* <div className="logo">EC</div> */}
+        <div>
+          <div className="brand-title">English Chat Class</div>
+          <div className="brand-sub">
+            Clases de inglés · Online · Conversacional
+          </div>
+        </div>
+      </div>
+
+      <nav className="nav">
+        <a href="#cursos">Cursos</a>
+        <a href="#horarios">Horarios</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+  );
+}

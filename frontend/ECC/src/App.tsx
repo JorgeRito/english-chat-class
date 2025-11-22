@@ -2,15 +2,12 @@ import TopBanner from "./components/TopBanner/TopBanner";
 import {ContentCard} from "./components/ContentCard/ContentCard";
 import "../src/components/ContentCard/ContentCard.css";
 import {useRef} from "react";
-// {ref}:{ref:React.RefObject<HTMLDivElement | null>}
-// export const handleScrollToSection = (ref:React.RefObject<HTMLDivElement | null>) => {
-//   if(ref?.current){
-//     ref.current.scrollIntoView({
-//       behavior: "smooth",
-//       block: "start"
-//     })
-//   }
-// };
+import {Hero} from "./components/Hero/Hero";
+import {Cursos} from "./components/Cursos/Cursor";
+import {Horarios} from "./components/Horarios/Horarios";
+import {Testimonios} from "./components/Testimonios/Testimonios";
+import {Contacto} from "./components/Contacto/Contacto";
+import {Header} from "./components/Header/Header";
 function App() {
   const ref1 = useRef<HTMLDivElement | null>(null);
   const ref2 = useRef<HTMLDivElement | null>(null);
@@ -46,8 +43,13 @@ function App() {
   ];
 
   return (
-    <main>
-      <TopBanner temp={refs} />
+    <div className="container">
+      <Header />
+      <Hero />
+      <Cursos />
+      <Horarios />
+      <Testimonios />
+      {/* <TopBanner temp={refs} />
       {info.map((item) => (
         <div
           style={{width: "100%"}}
@@ -84,8 +86,9 @@ function App() {
             <img src="/english-chat-class/contact.jpg"></img>
           </div>
         </div>
-      </div>
-    </main>
+      </div> */}
+      <Contacto />
+    </div>
   );
 }
 
