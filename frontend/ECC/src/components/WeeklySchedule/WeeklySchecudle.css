@@ -1,0 +1,48 @@
+table{
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: #EDD9F5;
+    width: 100%;
+}
+
+table thead{
+    background-color: #B777D5;
+}
+
+.hour-row td{
+    border: solid 2px #B777D5;
+    border-radius: 2.5px;
+}
+
+th, td{
+    text-align: center;
+    justify-items: center;
+    max-width: 115px;
+}
+ .student-holder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 160px;
+    height: 100%;
+    font-size: 10px;
+ }
+
+ .teacher-name{
+    font-size: 10px;
+    background-color: rgb(217, 217, 217);
+    border-radius: 5px;
+ }
+
+.modality{
+    width: 10px;
+    margin-right: 10px;
+    font-size: 12.5px;
+}
+
+ .student-name{
+    width: 150px;
+ }
