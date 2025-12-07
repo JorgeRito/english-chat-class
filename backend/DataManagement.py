@@ -2,7 +2,7 @@ import pandas as pd
 import re
 from datetime import datetime
 class DataManager:
-    def __init__(self, file_path:str = r"C:\Users\061571\OneDrive - Avnet\Documents\GitHub\english-chat-class\backend\SCHEDULE TEMP GEN.xlsx"):
+    def __init__(self, file_path:str = r"C:\Users\061571\Downloads\SCHEDULE TEMP GEN.xlsx"):
         #Change this path to the one drive path
         self.path = file_path
 
@@ -46,6 +46,21 @@ class DataManager:
                 }
         return results
 
+    def parse_time(self, time_str: str) -> int:
+        """Convierte '10AM' o '3PM' a minutos desde medianoche para ordenar"""
+        match = re.match(r'(\d{1,2})(AM|PM)', time_str)
+        if not match:
+            return 0
+        hour = int(match.group(1))
+        period = match.group(2)
+        
+        if period == 'PM' and hour != 12:
+            hour += 12
+        elif period == 'AM' and hour == 12:
+            hour = 0
+        
+        return hour * 60  # Convertir a minutos
+
     def json_structure(self, data:dict):
         json = {}
         for day, schedules in data.items():
@@ -56,8 +71,14 @@ class DataManager:
         excel = self.read_data()
         sheet_names = self.getSheetNames(excel)
         data = self.get_sheet_data(df=excel, sheet_name=sheet_names[0])
+        excel.close()
         time_json = self.students_per_hour(data)
-        # print(time_json)
+        
+        # Ordenar por hora (de más temprana a más tarde)
+        sorted_times = sorted(time_json.keys(), key=self.parse_time)
+        time_json = {time: time_json[time] for time in sorted_times}
+        
+        print(time_json)
         return time_json
 if __name__ == "__main__":
     data_manager = DataManager()

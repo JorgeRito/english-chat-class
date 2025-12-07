@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from DataManagement import DataManager
 from flask_cors import CORS
 
@@ -13,7 +13,7 @@ def index():
 @app.route("/get_data")
 def get_data():
     data = data_manager.main()
-    return data
+    return jsonify(data)
 
 if __name__ == "__main__":
     app.run(debug=True)

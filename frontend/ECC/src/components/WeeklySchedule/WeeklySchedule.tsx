@@ -25,6 +25,20 @@ export function WeeklySchedule() {
     const [isLoading, setIsLoading] = useState(true);
     const workDays = ["LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO"];
 
+    // Función para convertir hora a minutos desde medianoche para ordenar
+    const parseTime = (timeStr: string): number => {
+        const match = timeStr.match(/(\d{1,2})(AM|PM)/);
+        if (!match) return 0;
+        
+        let hour = parseInt(match[1]);
+        const period = match[2];
+        
+        if (period === 'PM' && hour !== 12) hour += 12;
+        if (period === 'AM' && hour === 12) hour = 0;
+        
+        return hour * 60;
+    };
+
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
@@ -60,7 +74,9 @@ export function WeeklySchedule() {
             </tr>
         </thead>
         <tbody>
-            {schedule && Object.keys(schedule).map((hour) => {
+            {schedule && Object.keys(schedule)
+                .sort((a, b) => parseTime(a) - parseTime(b))
+                .map((hour) => {
                 const hourData = schedule[hour];
                 return (
                     <tr key={hour} className="hour-row">
