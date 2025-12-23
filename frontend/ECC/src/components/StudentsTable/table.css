@@ -1,0 +1,44 @@
+.gp-table {
+  min-width: 300px;
+  max-width: 787px;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+}
+
+.gp-table input,
+.gp-table select{
+  width: 80px;
+  font-size: 0.9em;
+}
+
+.gp-table textarea {
+  width: 132px;
+  height: 34px;
+  font-size: 1.2em;
+  resize: none;
+}
+
+.gp-table thead tr{
+  text-align: left;
+  background-color: #cc6cef;
+  color: white;
+  font-weight: bold;
+}
+
+.gp-table th,
+.gp-table td {
+  padding: 12px 15px;
+}
+
+.gp-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.gp-table tbody tr:nth-of-type(even){
+  background-color: #f3f3f3;
+}
+
+.gp-table tbody tr:last-of-type {
+  border-bottom: #cc6cef 2px solid;
+}

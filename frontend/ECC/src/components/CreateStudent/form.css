@@ -1,0 +1,29 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 168, 236);
+    width: 409.5px;
+    padding: 20px;
+    position: relative;
+}
+
+.form-container input{
+    margin: 5px 0;
+    padding: 8px;
+    width: 80%;
+    font-size: 12px;
+}
+
+.form-container select {
+    margin: 5px 0;
+    padding: 8px;
+    width: 84%;
+    font-size: 12px;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+}

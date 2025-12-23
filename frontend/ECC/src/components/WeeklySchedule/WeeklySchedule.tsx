@@ -61,7 +61,7 @@ export function WeeklySchedule() {
     <div>
       <h1>Weekly Schedule</h1>
       <h2>Mes Dia Inicio - Dia Final</h2>
-      <table>
+      <table className="ws-table">
         <thead>
             <tr>
                 <th>Hora</th>
