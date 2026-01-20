@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {useState} from "react";
-import "C:\\Users\\ADMIN\\Documents\\GitHub\\english-chat-class\\frontend\\ECC\\src\\components\\StudentsTable\\table.css";
+import "./table.css";
 export interface Student {
   id: string;
   nombre_completo: string;

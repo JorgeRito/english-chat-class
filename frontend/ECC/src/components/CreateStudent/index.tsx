@@ -1,4 +1,4 @@
-import "C:\\Users\\ADMIN\\Documents\\GitHub\\english-chat-class\\frontend\\ECC\\src\\components\\CreateStudent\\form.css";
+import "./form.css";
 import StudentsTable from "../StudentsTable/StudentsTable.tsx";
 import type {updateDataType} from "../StudentsTable/StudentsTable.tsx";
 import {useState} from "react";
