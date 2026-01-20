@@ -5,19 +5,19 @@ import {Horarios} from "./components/Horarios/Horarios";
 import {Testimonios} from "./components/Testimonios/Testimonios";
 import {Contacto} from "./components/Contacto/Contacto";
 import {Header} from "./components/Header/Header";
-import { WeeklySchedule } from "./components/WeeklySchedule/WeeklySchedule";
-import { CreateUserForm } from "./components/CreateStudent";
-import { Scheduler } from "./components/Scheduler/Scheduler";
+// import { WeeklySchedule } from "./components/WeeklySchedule/WeeklySchedule";
+import {CreateUserForm} from "./components/CreateStudent";
+import {Scheduler} from "./components/Scheduler/Scheduler";
 function App() {
   return (
     <div className="container">
-      <CreateUserForm/> 
+      <CreateUserForm />
       <Header />
       <Hero />
       <Cursos />
       <Horarios />
-      <Scheduler/>
-      <WeeklySchedule />
+      <Scheduler />
+      {/* <WeeklySchedule /> */}
       <Testimonios />
       <Contacto />
     </div>

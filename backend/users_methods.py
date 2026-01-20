@@ -1,7 +1,7 @@
 import pandas as pd 
 import random
 import string
-filepath = r"C:\Users\061571\OneDrive - Avnet\Documents\GitHub\english-chat-class\backend\users_ecc.csv"
+filepath = r"C:\Users\ADMIN\Documents\GitHub\english-chat-class\backend\users_ecc.csv"
 
 def create_user(request):
     data = request

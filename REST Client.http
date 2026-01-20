@@ -1,0 +1,20 @@
+### Index
+GET http://127.0.0.1:5000
+
+### Get all users
+GET http://127.0.0.1:5000/api/get_users
+
+### 
+GET http://127.0.0.1:5000/api/schedule/read_schedule
+
+###
+POST http://127.0.0.1:5000/api/schedule/create_appointment
+Content-Type: application/json
+
+{
+    "id": "2",
+    "full_name": "test 2",
+    "date": "date test 2",
+    "time": "time test 2",
+    "teacher": "teacher test 2"
+}

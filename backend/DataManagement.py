@@ -1,8 +1,10 @@
 import pandas as pd 
 import re
 from datetime import datetime
+# "C:\Users\061571\Downloads\SCHEDULE TEMP GEN.xlsx"
+
 class DataManager:
-    def __init__(self, file_path:str = r"C:\Users\061571\Downloads\SCHEDULE TEMP GEN.xlsx"):
+    def __init__(self, file_path:str = r"C:\Users\ADMIN\Documents\GitHub\english-chat-class\backend\schedule_DB.xlsx"):
         #Change this path to the one drive path
         self.path = file_path
 
