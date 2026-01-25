@@ -2,32 +2,29 @@ import "./form.css";
 import StudentsTable from "../StudentsTable/StudentsTable.tsx";
 import type {updateDataType} from "../StudentsTable/StudentsTable.tsx";
 import {useState} from "react";
-
-const baseURL = "http://127.0.0.1:5000";
+import {
+  createUser,
+  deleteUser,
+  updateUser
+} from "../../api/students.service.ts";
+import type {Student} from "../../types";
 
 export function CreateUserForm() {
   const [update, setUpdate] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    const endpoint = " http://127.0.0.1:5000/api/create_user";
-
     e.preventDefault();
     const formData = new FormData(e.currentTarget as HTMLFormElement);
     const payload = {
-      nombre_completo: formData.get("nombre_completo"),
+      nombreCompleto: formData.get("nombre_completo"),
       telefono: formData.get("telefono"),
       plan: formData.get("plan") || "",
       mod: formData.get("mod") || "",
       status: formData.get("status") || "",
       nivel: formData.get("level") || ""
     };
-    await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
+    await createUser(payload as Partial<Student>);
+
     setUpdate(!update);
     const userInput = document.getElementById(
       "nombre_completo"
@@ -45,24 +42,18 @@ export function CreateUserForm() {
     levelSelect.value = "default";
   };
   const handleDelete = async (id: string) => {
-    const endpoint = `${baseURL}/api/delete_user/${id}`;
-    await fetch(endpoint, {
-      method: "DELETE"
-    });
+    await deleteUser(id);
     setUpdate(!update);
   };
   const handleSave = async (id: string, updatedData: updateDataType) => {
     if (updatedData) {
-      const endpoint = `${baseURL}/api/update_user/${id}`;
-      await fetch(endpoint, {
-        method: "PUT",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(updatedData)
-      });
-      setUpdate(!update);
-      console.log(id, updatedData);
-    } else {
-      console.log(id, "No data to update");
+      try {
+        await updateUser(id, updatedData);
+        setUpdate(!update);
+        // alert("Usuario actualizado exitosamente");
+      } catch (error) {
+        console.error("Error updating user:", error);
+      }
     }
   };
   return (

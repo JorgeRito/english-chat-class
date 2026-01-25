@@ -1,15 +1,8 @@
 import {useEffect} from "react";
 import {useState} from "react";
 import "./table.css";
-export interface Student {
-  id: string;
-  nombre_completo: string;
-  telefono: string;
-  plan?: string;
-  mod?: string;
-  status?: string;
-  nivel?: string;
-}
+import {getUsers} from "../../api/students.service";
+import type {Student} from "../../types";
 
 export type updateDataType = Partial<Student> | null;
 
@@ -29,8 +22,7 @@ export default function StudentsTable({
   const [updateData, setUpdateData] = useState<updateDataType>({});
   useEffect(() => {
     const fetchStudents = async () => {
-      const response = await fetch("http://localhost:5000/api/get_users");
-      const data = await response.json();
+      const data = await getUsers();
       setStudents(data);
     };
     fetchStudents();

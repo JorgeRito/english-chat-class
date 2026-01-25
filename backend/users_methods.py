@@ -53,7 +53,8 @@ def get_users():
     df = open_users_file()
     if isinstance(df, str):
         return {"Error reading users file"}
-    users_list = df.to_dict(orient="records")
+    sorted_df = df.sort_values(by="nombre_completo")
+    users_list = sorted_df.to_dict(orient="records")
     return users_list
 
 def delete_user(user_id):
@@ -74,4 +75,4 @@ def update_user(id, update_data):
     return {"status": "ok"}
 
 if __name__ == "__main__":
-    delete_user(8807)
+   print(get_users())

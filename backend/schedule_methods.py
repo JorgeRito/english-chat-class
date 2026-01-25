@@ -1,4 +1,7 @@
+from datetime import datetime
 import pandas as pd
+import date_helpers
+import uuid
 
 filepath = r"C:\Users\ADMIN\Documents\GitHub\english-chat-class\backend\Schedule_db.csv"
 
@@ -12,29 +15,54 @@ def read_schedule():
     return appointments
 
 def create_appointment(request):
-    id = request["id"]
-    full_name = request["full_name"]
-    date = request["date"]
+    ap_id = int(uuid.uuid4())
+    full_name = request["student"]
     time = request["time"]
-    teacher = request["teacher"]
+    full_date = request["fullDate"]
+    week_start, week_end = date_helpers.get_week_range(datetime.strptime(full_date, "%Y-%m-%d").date())
+    week = date_helpers.week_label(week_start, week_end)
+    mod = request["mod"]
+    teacher = "TBD"
     try:
-        save_appointment_to_file(id,full_name,date,time,teacher)
+        save_appointment_to_file(
+            ap_id,
+            full_name,
+            time,
+            full_date,
+            week_start,
+            week_end,
+            week,
+            mod,
+            teacher)
         return {"status":"ok"}
     except:
         return {"Error adding appointment"}
 
-def save_appointment_to_file(id,full_name,date,time,teacher):
+def save_appointment_to_file(
+            ap_id,
+            full_name,
+            time,
+            full_date,
+            week_start,
+            week_end,
+            week,
+            mod,
+            teacher):
     data = open_file()
     new_appointment = {
-        "id": id,
+        "ap_id": ap_id,
         "full_name": full_name,
-        "date": date,
         "time": time,
-        "teacher": teacher
+        "date": full_date,
+        "week_start": week_start,
+        "week_end": week_end,
+        "week": week,
+        "mod": mod,
+        "teacher": teacher,
     }
     data = pd.concat([data, pd.DataFrame([new_appointment])], ignore_index=True)
     data.to_csv(filepath, index=False)
 
 
 if __name__ == "__main__":
-    print(read_schedule())
+    print(uuid.uuid4())
