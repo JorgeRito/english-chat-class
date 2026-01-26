@@ -60,6 +60,13 @@ def read_schedule():
     data = SM.read_schedule()
     return jsonify(data)
 
+## READ APPOINTMENTS BY WEEK
+@app.route("/api/schedule/read_appointments_by_week/<week_label>", methods=["GET"])
+def read_appointments_by_week(week_label):
+    data = SM.read_appointments_by_week(week_label)
+    return jsonify(data)
+
+
 ## CREATE APPOINTMENT
 @app.route("/api/schedule/create_appointment", methods=["POST"])
 def create_appointment():

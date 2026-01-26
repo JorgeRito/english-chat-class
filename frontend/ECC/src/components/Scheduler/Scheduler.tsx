@@ -5,8 +5,24 @@ import {getUsers} from "../../api/students.service";
 import {createAppointment} from "../../api/schedule.service";
 import {mapStudentFromAPI} from "../../mapper";
 
-const modalities = ["Presencial", "Online", "Híbrido"];
-const timeSlots = ["8AM", "9AM"];
+const modalities = ["Presencial", "Online"];
+const timeSlots = {
+  "07:00": "7:00AM",
+  "08:00": "8:00AM",
+  "09:00": "9:00AM",
+  "10:00": "10:00AM",
+  "11:00": "11:00AM",
+  "12:00": "12:00PM",
+  "13:00": "1:00PM",
+  "14:00": "2:00PM",
+  "15:00": "3:00PM",
+  "16:00": "4:00PM",
+  "17:00": "5:00PM",
+  "18:00": "6:00PM",
+  "19:00": "7:00PM",
+  "20:00": "8:00PM",
+  "21:00": "9:00PM"
+};
 
 export function Scheduler() {
   const handleSubmit = async () => {
@@ -22,7 +38,6 @@ export function Scheduler() {
       mod: mod
     };
     await createAppointment(payload);
-    console.log(payload);
   };
 
   const [students, setStudents] = useState<Student[]>([]);
@@ -54,9 +69,9 @@ export function Scheduler() {
           <option value="" disabled>
             Selecciona una hora
           </option>
-          {timeSlots.map((slot) => (
-            <option key={slot} value={slot}>
-              {slot}
+          {Object.entries(timeSlots).map(([key, value]) => (
+            <option key={key} value={key}>
+              {value}
             </option>
           ))}
         </select>
