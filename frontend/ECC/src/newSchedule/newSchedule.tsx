@@ -61,16 +61,10 @@ export function NewSchedule() {
           </tr>
         </thead>
         <tbody>
-          {Object.entries(scheduleAppointments?.hour ?? {}).map(
-            ([hour]) => (
+          {Object.keys(scheduleAppointments ?? {}).map(
+            (hour) => (
               <tr key={hour}>
                 <td>{hour}</td>
-                <td>{hour}</td>
-                <td>{hour}</td>
-                <td>{hour}</td>
-                <td>{hour}</td>
-                <td>{hour}</td>
-                
               </tr>
             )
           )}
