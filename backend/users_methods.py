@@ -1,7 +1,13 @@
 import pandas as pd 
 import random
 import string
-filepath = r"C:\Users\ADMIN\Documents\GitHub\english-chat-class\backend\users_ecc.csv"
+import os
+
+def get_filepath():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(current_dir)
+    filepath = os.path.join(parent_dir, "backend/users_ecc.csv")
+    return filepath
 
 def create_user(request):
     data = request
@@ -74,5 +80,8 @@ def update_user(id, update_data):
     df.to_csv(filepath, index=False)
     return {"status": "ok"}
 
+filepath = get_filepath()
+
 if __name__ == "__main__":
+   print(get_filepath())
    print(get_users())

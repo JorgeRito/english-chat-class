@@ -2,8 +2,15 @@ from datetime import datetime
 import pandas as pd
 import date_helpers
 import uuid
+import os
+    
+def get_filepath():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.dirname(current_dir)
+    filepath = os.path.join(parent_dir, "backend/Schedule_db.csv")
+    return filepath
 
-filepath = r"C:\Users\ADMIN\Documents\GitHub\english-chat-class\backend\Schedule_db.csv"
+filepath = get_filepath()
 
 def open_file(filepath:str=filepath):
     dataframe = pd.read_csv(filepath)
@@ -76,6 +83,8 @@ def read_appointments_by_week(week_label: str):
     filtered_data = data.loc[data["week"] == week_label]
     days = separate_by_days(filtered_data)
     return days
+
+
 
 if __name__ == "__main__":
     print(read_appointments_by_week("Enero: 26 - 31"))
