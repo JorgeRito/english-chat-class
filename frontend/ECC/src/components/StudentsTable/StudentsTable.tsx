@@ -48,11 +48,11 @@ export default function StudentsTable({
                 <tr key={student.id}>
                   <td>
                     <textarea
-                      defaultValue={student.nombre_completo}
+                      defaultValue={student.nombreCompleto}
                       onChange={(e) =>
                         setUpdateData({
                           ...updateData,
-                          nombre_completo: e.target.value
+                          nombreCompleto: e.target.value
                         })
                       }
                     />
@@ -124,7 +124,7 @@ export default function StudentsTable({
                 </tr>
               ) : (
                 <tr key={student.id}>
-                  <td>{student.nombre_completo}</td>
+                  <td>{student.nombreCompleto}</td>
                   <td>{student.telefono}</td>
                   <td>{student.nivel}</td>
                   <td>{student.plan}</td>
