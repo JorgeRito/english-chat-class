@@ -9,25 +9,20 @@ const modalities = ["Presencial", "Online", "Híbrido"];
 const timeSlots = ["8AM", "9AM"];
 
 export function Scheduler() {
-  const [newAppointment, setNewAppointment] = useState<ScheduleRecord | null>(
-    null
-  );
-
   const handleSubmit = async () => {
     const student = (document.getElementById("sh-student") as HTMLInputElement)
       .value;
     const date = (document.getElementById("sh-date") as HTMLInputElement).value;
     const time = (document.getElementById("sh-time") as HTMLInputElement).value;
     const mod = (document.getElementById("sh-mod") as HTMLInputElement).value;
-    setNewAppointment({
+    const payload: ScheduleRecord = {
       student: student,
       fullDate: date,
       time: time,
       mod: mod
-    });
-    console.log(newAppointment);
-    createAppointment(newAppointment!);
-    console.log(student, date, time, mod);
+    };
+    await createAppointment(payload);
+    console.log(payload);
   };
 
   const [students, setStudents] = useState<Student[]>([]);
