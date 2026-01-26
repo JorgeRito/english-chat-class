@@ -3,6 +3,7 @@ import pandas as pd
 import date_helpers
 import uuid
 import os
+import pprint
     
 def get_filepath():
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -67,24 +68,36 @@ def save_appointment_to_file(
         "mod": mod,
         "teacher": teacher,
     }
-    print(new_appointment)
+    # print(new_appointment)
     data = pd.concat([data, pd.DataFrame([new_appointment])], ignore_index=True)
     data.to_csv(filepath, index=False)
 
 def read_appointments_by_week(week_label: str):
-    def separate_by_days(appointments: pd.DataFrame):
-        days = {}
-        appointments["full_date"] = pd.to_datetime(appointments["full_date"])
-        for day in range(0,6):
-            day_df = appointments[appointments["full_date"].dt.weekday == day].sort_values(by=['time'])
-            days[day] = day_df.to_dict(orient="records")
-        return days
+    def get_schedule_hours(data: pd.DataFrame):
+        temp = data.sort_values(by="time")
+        hours = temp["time"].unique().tolist()
+        return hours
+    
+    def set_data(data: pd.DataFrame, hours:list):
+        schedule_data = {}
+        for hour in hours:
+            if hour not in schedule_data.keys():
+                schedule_data[hour] = {}
+            for day in range(0,6):
+                if day not in schedule_data[hour].keys():
+                    schedule_data[hour][f"{day}"] = {}
+                list_of_appointments = data.loc[(data["time"] == hour) & (data["full_date"].dt.weekday == day)]
+                schedule_data[hour][f"{day}"] = list_of_appointments[["ap_id","full_name","mod","teacher"]].to_dict(orient="records")
+        return schedule_data
+            
     data = open_file()
+    data["full_date"] = pd.to_datetime(data["full_date"])
     filtered_data = data.loc[data["week"] == week_label]
-    days = separate_by_days(filtered_data)
-    return days
-
+    hours = get_schedule_hours(filtered_data)
+    op_schedule = set_data(filtered_data, hours)
+    # pprint.pprint((set_data(filtered_data, hours), hours), indent=4)
+    return op_schedule
 
 
 if __name__ == "__main__":
-    print(read_appointments_by_week("Enero: 26 - 31"))
+    read_appointments_by_week("Febrero 2 - 7")

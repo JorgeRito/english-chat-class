@@ -1,9 +1,13 @@
 import "./newSchedule.css";
 import {useEffect, useState} from "react";
 import {getMonthWeeks, getWeekAppointments} from "../api/schedule.service";
+import type {ScheduleRecordAPI} from "../types";
+
 export function NewSchedule() {
   const [weeks, setWeeks] = useState<string[]>([]);
-  const [selectedWeek, setSelectedWeek] = useState<string>(weeks[0]);
+  const [selectedWeek, setSelectedWeek] = useState<string>("");
+  const [scheduleAppointments, setScheduleAppointments] = useState<ScheduleRecordAPI | null>(null);
+
   const now = new Date();
 
   useEffect(() => {
@@ -17,36 +21,33 @@ export function NewSchedule() {
   useEffect(() => {
     if (selectedWeek) {
       const fetchAppointments = async () => {
-        const appointments = await getWeekAppointments(selectedWeek);
+        const appointments: ScheduleRecordAPI = await getWeekAppointments(selectedWeek);
         console.log(appointments);
+        setScheduleAppointments(appointments);
       };
       fetchAppointments();
     }
   }, [selectedWeek]);
+
+  useEffect(() => {
+    console.log("scheduleAppointments:", scheduleAppointments);
+  }, [scheduleAppointments]);
 
   return (
     <div>
       <h1>Calendario Semanal</h1>
       <h2>Semana: {selectedWeek || "Selecciona y presiona actualizar"}</h2>
       {/* <h2>Mes Dia Inicio - Dia Final</h2> */}
-      <select id="week-range-select">
+      <select id="week-range-select" onChange={(e) => setSelectedWeek(e.target.value)}>
+        <option value="">Selecciona una semana</option>
         {weeks.map((week) => (
           <option key={week} value={week}>
             {week}
           </option>
         ))}
       </select>
-      <button
-        id="update-week-btn"
-        onClick={() => {
-          setSelectedWeek(
-            (document.getElementById("week-range-select") as HTMLSelectElement)
-              ?.value || ""
-          );
-        }}
-      >
-        Actualizar
-      </button>
+      {!scheduleAppointments ? (<p>No hay datos de la semana seleccionada.</p>) : 
+      (
       <table className="ws-table">
         <thead>
           <tr>
@@ -59,8 +60,22 @@ export function NewSchedule() {
             <th>Sabado</th>
           </tr>
         </thead>
-        <tbody></tbody>
-      </table>
+        <tbody>
+          {Object.entries(scheduleAppointments?.hour ?? {}).map(
+            ([hour]) => (
+              <tr key={hour}>
+                <td>{hour}</td>
+                <td>{hour}</td>
+                <td>{hour}</td>
+                <td>{hour}</td>
+                <td>{hour}</td>
+                <td>{hour}</td>
+                
+              </tr>
+            )
+          )}
+        </tbody>
+      </table>)}
     </div>
   );
 }

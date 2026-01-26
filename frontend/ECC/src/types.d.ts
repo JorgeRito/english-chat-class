@@ -23,3 +23,16 @@ export interface ScheduleRecord {
   time: string;
   mod: string;
 }
+
+export interface ScheduleRecordAPI {
+  hour: Record<DayIndex, Appointment>;
+}
+
+export type DayIndex = 0 | 1 | 2 | 3 | 4 | 5;
+
+export interface Appointment {
+  ap_id: string,
+  full_name: string,
+  mod: string,
+  teacher: string
+}
