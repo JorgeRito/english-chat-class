@@ -3,6 +3,7 @@ import {useState} from "react";
 import "./table.css";
 import {getUsers} from "../../api/students.service";
 import type {Student} from "../../types";
+import { mapStudentFromAPI } from "../../mapper";
 
 export type updateDataType = Partial<Student> | null;
 
@@ -23,7 +24,8 @@ export default function StudentsTable({
   useEffect(() => {
     const fetchStudents = async () => {
       const data = await getUsers();
-      setStudents(data);
+      console.log(data)
+      setStudents(data.map(mapStudentFromAPI));
     };
     fetchStudents();
   }, [updateButton]);
@@ -124,7 +126,7 @@ export default function StudentsTable({
                 </tr>
               ) : (
                 <tr key={student.id}>
-                  <td>{student.nombreCompleto}</td>
+                  <td>{student.nombre_completo}</td>
                   <td>{student.telefono}</td>
                   <td>{student.nivel}</td>
                   <td>{student.plan}</td>

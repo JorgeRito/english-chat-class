@@ -7,12 +7,12 @@ import {Contacto} from "./components/Contacto/Contacto";
 import {Header} from "./components/Header/Header";
 // import {WeeklySchedule} from "./components/WeeklySchedule/WeeklySchedule";
 import {NewSchedule} from "./newSchedule/newSchedule";
-// import {CreateUserForm} from "./components/CreateStudent";
+import {CreateUserForm} from "./components/CreateStudent";
 import {Scheduler} from "./components/Scheduler/Scheduler";
 function PublicSite() {
   return (
     <div className="container">
-      {/* <CreateUserForm /> */}
+      <CreateUserForm />
       <Header />
       <Hero />
       <Cursos />
