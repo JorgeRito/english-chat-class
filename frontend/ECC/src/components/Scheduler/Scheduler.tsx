@@ -59,7 +59,7 @@ export function Scheduler() {
             Selecciona un estudiante
           </option>
           {students.map((student) => (
-            <option key={student.id} value={student.nombreCompleto}>
+            <option key={student.id} value={student.id}>
               {student.nombreCompleto}
             </option>
           ))}

@@ -3,7 +3,7 @@ import pandas as pd
 import date_helpers
 import uuid
 import os
-import pprint
+import users_methods
     
 def get_filepath():
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -25,6 +25,7 @@ def read_schedule():
 def create_appointment(request):
     ap_id = int(uuid.uuid4())
     full_name = request["student"]
+    student_id = request["student"]
     time = request["time"]
     full_date = request["fullDate"]
     week_start, week_end = date_helpers.get_week_range(datetime.strptime(full_date, "%Y-%m-%d").date())
@@ -88,6 +89,7 @@ def read_appointments_by_week(week_label: str):
                     schedule_data[hour][f"{day}"] = []
                 list_of_appointments = data.loc[(data["time"] == hour) & (data["full_date"].dt.weekday == day)]
                 schedule_data[hour][f"{day}"] = list_of_appointments[["ap_id","full_name","mod","teacher"]].to_dict(orient="records")
+        
         return schedule_data
             
     data = open_file()
