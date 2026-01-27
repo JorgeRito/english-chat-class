@@ -67,7 +67,7 @@ def get_users():
 def get_user_by_id(user_id: str):
     df = open_users_file()
     df = df[df["id"] == int(user_id)]
-    return df
+    return df.to_dict(orient="records")[0]
 
 def delete_user(user_id):
     df = open_users_file()
@@ -91,4 +91,4 @@ filepath = get_filepath()
 if __name__ == "__main__":
 #    print(get_filepath())
 #    print(get_users()[1])
-    print(get_user_by_id(1))
+    print(get_user_by_id(10))
