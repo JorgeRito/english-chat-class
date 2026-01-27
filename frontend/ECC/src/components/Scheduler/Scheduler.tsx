@@ -54,6 +54,10 @@ export function Scheduler() {
     <div>
       <div className="form-container">
         <h2>Agendar Estudiante</h2>
+        <div>
+          <input className="multiple-classes-checkbox" type="checkbox"/>
+          <label>Agendar multiples clases</label>
+        </div>
         <select id="sh-student" defaultValue="">
           <option value="" disabled>
             Selecciona un estudiante
@@ -85,7 +89,10 @@ export function Scheduler() {
             </option>
           ))}
         </select>
-        <button onClick={handleSubmit}>Agendar</button>
+        <div>
+          <button onClick={handleSubmit}>Agendar</button>
+          <button>Limpiar</button>
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 .form-container {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     background-color: rgb(255, 168, 236);
@@ -13,6 +13,11 @@
     padding: 8px;
     width: 80%;
     font-size: 12px;
+}
+
+.form-container .multiple-classes-checkbox{
+    width: 20px;
+    height: 15px;
 }
 
 .form-container select {
