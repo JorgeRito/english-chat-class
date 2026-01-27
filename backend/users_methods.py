@@ -31,7 +31,8 @@ def generate_random_id(lenght=4):
 def open_users_file():
     try:
         df = pd.read_csv(filepath)
-        df.fillna("", inplace=True)
+        df.fillna(value="", inplace=True)
+        df = df.replace("0","")
         return df
     except:
         return "Error reading file"
@@ -83,5 +84,6 @@ def update_user(id, update_data):
 filepath = get_filepath()
 
 if __name__ == "__main__":
-   print(get_filepath())
-   print(get_users())
+#    print(get_filepath())
+#    print(get_users()[1])
+    print(open_users_file())
