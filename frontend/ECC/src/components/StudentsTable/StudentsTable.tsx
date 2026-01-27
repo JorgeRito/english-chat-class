@@ -127,7 +127,7 @@ export default function StudentsTable({
                 </tr>
               ) : (
                 <tr key={student.id}>
-                  <td>{student.nombre_completo}</td>
+                  <td>{student.nombreCompleto}</td>
                   <td>{student.telefono}</td>
                   <td>{student.nivel}</td>
                   <td>{student.plan}</td>
