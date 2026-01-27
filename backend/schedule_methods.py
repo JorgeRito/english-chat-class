@@ -102,4 +102,4 @@ def read_appointments_by_week(week_label: str):
 
 
 if __name__ == "__main__":
-    read_appointments_by_week("Febrero 2 - 7")
+    print(read_appointments_by_week("Febrero: 2 - 7"))
