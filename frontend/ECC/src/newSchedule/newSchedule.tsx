@@ -1,8 +1,8 @@
 import "./newSchedule.css";
 import {useEffect, useState} from "react";
 import {getMonthWeeks, getWeekAppointments} from "../api/schedule.service";
-import type {ScheduleRecordAPI} from "../types";
-
+import type {ScheduleRecordAPI, Appointment} from "../types";
+import { StudentHolder } from "../components/WeeklySchedule/StudentHolder/StudentHolder";
 export function NewSchedule() {
   const [weeks, setWeeks] = useState<string[]>([]);
   const [selectedWeek, setSelectedWeek] = useState<string>("");
@@ -22,7 +22,7 @@ export function NewSchedule() {
     if (selectedWeek) {
       const fetchAppointments = async () => {
         const appointments: ScheduleRecordAPI = await getWeekAppointments(selectedWeek);
-        console.log(appointments);
+        // console.log(appointments);
         setScheduleAppointments(appointments);
       };
       fetchAppointments();
@@ -30,7 +30,7 @@ export function NewSchedule() {
   }, [selectedWeek]);
 
   useEffect(() => {
-    console.log("scheduleAppointments:", scheduleAppointments);
+    // console.log("scheduleAppointments:", scheduleAppointments);
   }, [scheduleAppointments]);
 
   return (
@@ -61,13 +61,29 @@ export function NewSchedule() {
           </tr>
         </thead>
         <tbody>
-          {Object.keys(scheduleAppointments ?? {}).map(
-            (hour) => (
-              <tr key={hour}>
-                <td>{hour}</td>
-              </tr>
-            )
-          )}
+          {Object.keys(scheduleAppointments).map((hour) => (
+            <tr key={hour}>
+              <td>{hour}</td>
+              {[0, 1, 2, 3, 4, 5].map((dayNum) => {
+                const dayKey = String(dayNum);
+                const appointments = scheduleAppointments[hour][dayKey] || [];
+                
+                return (
+                  <td key={dayKey}>
+                    {appointments.length === 0 ? (
+                      <span>-</span>
+                    ) : (
+                      appointments.map((appointment: Appointment, index: number) => (
+                        <div key={appointment.ap_id || index} style={{ marginBottom: '8px' }}>
+                          <StudentHolder studentName={appointment.full_name} modality="O" level="BEG" />
+                        </div>
+                      ))
+                    )}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
         </tbody>
       </table>)}
     </div>

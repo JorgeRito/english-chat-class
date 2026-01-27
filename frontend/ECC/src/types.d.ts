@@ -25,7 +25,7 @@ export interface ScheduleRecord {
 }
 
 export interface ScheduleRecordAPI {
-  hour: Record<DayIndex, Appointment>;
+  [hour: string]: Record<string, Appointment[]>;
 }
 
 export type DayIndex = 0 | 1 | 2 | 3 | 4 | 5;

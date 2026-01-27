@@ -85,7 +85,7 @@ def read_appointments_by_week(week_label: str):
                 schedule_data[hour] = {}
             for day in range(0,6):
                 if day not in schedule_data[hour].keys():
-                    schedule_data[hour][f"{day}"] = {}
+                    schedule_data[hour][f"{day}"] = []
                 list_of_appointments = data.loc[(data["time"] == hour) & (data["full_date"].dt.weekday == day)]
                 schedule_data[hour][f"{day}"] = list_of_appointments[["ap_id","full_name","mod","teacher"]].to_dict(orient="records")
         return schedule_data
