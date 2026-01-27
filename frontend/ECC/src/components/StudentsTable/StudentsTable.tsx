@@ -1,3 +1,4 @@
+//Fix nombre_completo to nombreCompleto
 import {useEffect} from "react";
 import {useState} from "react";
 import "./table.css";
