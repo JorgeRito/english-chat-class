@@ -75,7 +75,7 @@ export function NewSchedule() {
                     ) : (
                       appointments.map((appointment: Appointment, index: number) => (
                         <div key={appointment.ap_id || index} style={{ marginBottom: '8px' }}>
-                          <StudentHolder studentName={appointment.full_name} modality="O" level="BEG" />
+                          <StudentHolder studentName={appointment.full_name} modality={appointment.mod} level={appointment.level} />
                         </div>
                       ))
                     )}

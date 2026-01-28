@@ -1,6 +1,6 @@
 const mod = {
-    "O": "💻",
-    "P": "🧑‍🏫"
+    "Online": "💻",
+    "Presencial": "🧑‍🏫"
 }
 
 const colorPerLevel = {

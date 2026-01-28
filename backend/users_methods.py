@@ -64,6 +64,11 @@ def get_users():
     users_list = sorted_df.to_dict(orient="records")
     return users_list
 
+def get_user_by_id(user_id: str):
+    df = open_users_file()
+    df = df[df["id"] == int(user_id)]
+    return df.to_dict(orient="records")[0]
+
 def delete_user(user_id):
     df = open_users_file()
     if isinstance(df, str):
@@ -86,4 +91,4 @@ filepath = get_filepath()
 if __name__ == "__main__":
 #    print(get_filepath())
 #    print(get_users()[1])
-    print(open_users_file())
+    print(get_user_by_id(10))
