@@ -24,8 +24,11 @@ def read_schedule():
 
 def create_appointment(request):
     ap_id = int(uuid.uuid4())
-    full_name = request["student"]
+    # full_name = request["student"]
     student_id = request["student"]
+    student = users_methods.get_user_by_id(student_id)
+    full_name = student["nombre_completo"]
+    level = student["nivel"]
     time = request["time"]
     full_date = request["fullDate"]
     week_start, week_end = date_helpers.get_week_range(datetime.strptime(full_date, "%Y-%m-%d").date())
@@ -36,6 +39,7 @@ def create_appointment(request):
         save_appointment_to_file(
             ap_id,
             full_name,
+            level,
             time,
             full_date,
             week_start,
@@ -50,6 +54,7 @@ def create_appointment(request):
 def save_appointment_to_file(
             ap_id,
             full_name,
+            level,
             time,
             full_date,
             week_start,
@@ -61,6 +66,7 @@ def save_appointment_to_file(
     new_appointment = {
         "ap_id": ap_id,
         "full_name": full_name,
+        "level": level,
         "time": time,
         "full_date": full_date,
         "week_start": week_start,
@@ -88,7 +94,7 @@ def read_appointments_by_week(week_label: str):
                 if day not in schedule_data[hour].keys():
                     schedule_data[hour][f"{day}"] = []
                 list_of_appointments = data.loc[(data["time"] == hour) & (data["full_date"].dt.weekday == day)]
-                schedule_data[hour][f"{day}"] = list_of_appointments[["ap_id","full_name","mod","teacher"]].to_dict(orient="records")
+                schedule_data[hour][f"{day}"] = list_of_appointments[["ap_id","full_name","level","mod","teacher"]].to_dict(orient="records")
         
         return schedule_data
             
