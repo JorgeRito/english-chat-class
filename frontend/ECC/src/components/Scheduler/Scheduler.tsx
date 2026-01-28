@@ -25,7 +25,10 @@ const timeSlots = {
 };
 
 export function Scheduler() {
+  const [multipleCheckbox, setMultipleCheckbox] = useState(false)
+  const [students, setStudents] = useState<Student[]>([]);
   const handleSubmit = async () => {
+    console.log("handleSubmit triggered")
     const student = (document.getElementById("sh-student") as HTMLInputElement)
       .value;
     const date = (document.getElementById("sh-date") as HTMLInputElement).value;
@@ -40,8 +43,20 @@ export function Scheduler() {
     await createAppointment(payload);
   };
 
-  const [students, setStudents] = useState<Student[]>([]);
-
+    //Button states depending on checkbox status
+  const buttonModsConfig = {
+    'single': {
+      onClick: handleSubmit,
+      label: "Agendar",
+      component: <></>
+    },
+    'multi':{
+      onClick: handleSubmit,
+      label: "Listar",
+      component: <>Componente de clase temporal</>
+    }
+  }
+  const buttonMod = multipleCheckbox ? "multi" : "single"
   useEffect(() => {
     const fetchStudents = async () => {
       const data: StudentAPI[] = await getUsers();
@@ -54,10 +69,6 @@ export function Scheduler() {
     <div>
       <div className="form-container">
         <h2>Agendar Estudiante</h2>
-        <div>
-          <input className="multiple-classes-checkbox" type="checkbox"/>
-          <label>Agendar multiples clases</label>
-        </div>
         <select id="sh-student" defaultValue="">
           <option value="" disabled>
             Selecciona un estudiante
@@ -90,8 +101,17 @@ export function Scheduler() {
           ))}
         </select>
         <div>
-          <button onClick={handleSubmit}>Agendar</button>
-          <button>Limpiar</button>
+          <input className="multiple-classes-checkbox" type="checkbox" onChange={(e)=>setMultipleCheckbox(e.target.checked)}/>
+          <label>Agendar multiples clases</label>
+        </div>
+        {!multipleCheckbox ? (
+          <></>
+        ): (
+          buttonModsConfig[buttonMod].component
+        )}
+        <div>
+          <button className="btn-primary" onClick={buttonModsConfig[buttonMod].onClick}>{buttonModsConfig[buttonMod].label}</button>
+          <button className="btn-outline">Limpiar</button>
         </div>
       </div>
     </div>

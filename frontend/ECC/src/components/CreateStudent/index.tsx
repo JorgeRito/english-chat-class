@@ -83,7 +83,7 @@ export function CreateUserForm() {
           <option value="intermedio">Intermedio</option>
           <option value="avanzado">Avanzado</option>
         </select>
-        <button type="submit">Crear Usuario</button>
+        <button className="btn-primary" type="submit">Crear Usuario</button>
       </form>
       <StudentsTable
         updateButton={update}
