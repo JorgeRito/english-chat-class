@@ -31,8 +31,9 @@ export interface ScheduleRecordAPI {
 export type DayIndex = 0 | 1 | 2 | 3 | 4 | 5;
 
 export interface Appointment {
-  ap_id: string,
-  full_name: string,
-  mod: string,
-  teacher: string
+  ap_id: string;
+  full_name: string;
+  level: string;
+  mod: string;
+  teacher: string;
 }
