@@ -28,7 +28,7 @@ export function Scheduler() {
   const [multipleCheckbox, setMultipleCheckbox] = useState(false)
   const [students, setStudents] = useState<Student[]>([]);
   const handleSubmit = async () => {
-    console.log("handleSubmit triggered")
+    // console.log("handleSubmit triggered")
     const student = (document.getElementById("sh-student") as HTMLInputElement)
       .value;
     const date = (document.getElementById("sh-date") as HTMLInputElement).value;

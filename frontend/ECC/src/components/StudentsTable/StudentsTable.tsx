@@ -25,7 +25,7 @@ export default function StudentsTable({
   useEffect(() => {
     const fetchStudents = async () => {
       const data = await getUsers();
-      console.log(data)
+      // console.log(data)
       setStudents(data.map(mapStudentFromAPI));
     };
     fetchStudents();
