@@ -1,0 +1,30 @@
+.card-container{
+    /* border: solid black 1px; */
+    width: 350px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: var(--card);
+}
+
+.card-container .icon{
+    font-size: 40px;
+    color: black;
+}
+
+.card-container .card-title{
+    font-size: 32px;
+    /* color: var(--navy); */
+    color:black;
+}
+
+.card-container:hover{
+    background-color: #cc95e6;
+}
+
+.panel-option:active{
+    background-color: #b872d9;
+}
