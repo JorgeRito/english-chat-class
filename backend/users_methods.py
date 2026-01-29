@@ -11,7 +11,7 @@ def get_filepath():
 
 def create_user(request):
     data = request
-    nombre = data["nombre_completo"]
+    nombre = data["nombreCompleto"]
     telefono = data["telefono"]
     nivel = data["nivel"]
     plan = data["plan"]
