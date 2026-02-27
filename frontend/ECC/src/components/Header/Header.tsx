@@ -4,7 +4,7 @@ export function Header() {
       <div className="brand">
         <img
           className="logo"
-          src="/english-chat-class/ecc_logo.png"
+          src="/ecc_logo.png"
           alt="English Chat Class"
         />
         {/* <div className="logo">EC</div> */}
