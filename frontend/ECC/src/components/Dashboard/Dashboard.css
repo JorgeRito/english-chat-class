@@ -1,0 +1,9 @@
+.dashboard-header {
+    background-color: #B777D5;
+    width: 100vh;
+    color: white;
+}
+
+.dashboard-main{
+    display: flex;
+}

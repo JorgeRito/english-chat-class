@@ -8,6 +8,7 @@
     align-items: center;
     border-radius: 12px;
     background-color: var(--card);
+    margin: 15px;
 }
 
 .card-container .icon{

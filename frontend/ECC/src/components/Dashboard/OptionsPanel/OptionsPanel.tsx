@@ -18,7 +18,9 @@ export function OptionsPanel({icon}:{icon:IconDefinition}) {
             </div>
             
             {options.map((option: string) => (
-                <div className="panel-option" key={option}>{option}</div>
+                <div className="panel-option" key={option}>
+                    <label>{option}</label>
+                </div>
             ))}
         </div>
             <div className='panel-option logout'>Salir</div>
