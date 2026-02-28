@@ -1,7 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './OptionPanel.css'
-import type { IconDefinition } from '@fortawesome/free-solid-svg-icons'
-export function OptionsPanel({icon}:{icon:IconDefinition}) {
+
+export function OptionsPanel() {
     const options = [
         "Inicio",
         "Estudiantes",
@@ -12,9 +11,7 @@ export function OptionsPanel({icon}:{icon:IconDefinition}) {
     return <div className="option-panel">
         <div className='panel-top'>
             <div className="user-img">
-                <FontAwesomeIcon icon={icon}/>
-                <img alt="user-profile-pic"/>
-                
+                <img src="/ecc_logo.png" alt="ECC Logo" />
             </div>
             
             {options.map((option: string) => (

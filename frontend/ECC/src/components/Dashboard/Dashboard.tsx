@@ -1,24 +1,20 @@
 import { OptionsPanel } from "./OptionsPanel/OptionsPanel"
 import { CardComponent } from "./CardComponent/CardComponent"
-import {  faUsers,  faSchool,  faCalendarAlt, faUser} from "@fortawesome/free-solid-svg-icons";
-import { Scheduler } from "../Scheduler/Scheduler";
-import { NewSchedule } from "../../newSchedule/newSchedule";
+import { faUsers, faCalendarAlt, faUser } from "@fortawesome/free-solid-svg-icons";
 import "./Dashboard.css"
-import { CreateUserForm } from "../CreateStudent";
+
 export function Dashboard() {
     return (
         <div className="dashboard-main">
-            <OptionsPanel icon={faUser}/>
+            <OptionsPanel />
             <div className="content-container">
-                <Scheduler/>
-                <NewSchedule/>
-                <CreateUserForm/>
-                
-                {/* <div className="dashboard-header">DASHBOARD</div>
-                <CardComponent title="Inicio" icon={faSchool}/>
-                <CardComponent title="Estudiantes" icon={faUsers}/>
-                <CardComponent title="Horarios" icon={faCalendarAlt}/> */}
-
+                <header className="content-container__header">Inicio</header>
+                <div className="content-container__cards">
+                    <CardComponent title="Agregar Estudiante" icon={faUser} />
+                    <CardComponent title="Estudiantes" icon={faUsers} />
+                    <CardComponent title="Horario" icon={faCalendarAlt} />
+                    
+                </div>
             </div>
         </div>
     )

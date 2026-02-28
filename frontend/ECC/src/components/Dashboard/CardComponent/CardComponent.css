@@ -9,6 +9,7 @@
     border-radius: 12px;
     background-color: var(--card);
     margin: 15px;
+    cursor: pointer;
 }
 
 .card-container .icon{

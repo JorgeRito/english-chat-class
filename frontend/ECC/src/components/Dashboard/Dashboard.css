@@ -1,9 +1,43 @@
+/* Usa la misma paleta que PublicSite (NewLayout.css) */
 .dashboard-header {
-    background-color: #B777D5;
-    width: 100vh;
+    background-color: var(--navy);
+    width: 100%;
     color: white;
 }
 
-.dashboard-main{
+.dashboard-main {
     display: flex;
+    background: var(--bg);
+    min-height: 100vh;
+}
+
+.content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    padding: 28px;
+    color: #0f1724;
+}
+
+.content-container__header {
+    height: 200px;
+    background-color: var(--navy);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: -28px -28px 24px -28px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+}
+
+.content-container__cards {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
