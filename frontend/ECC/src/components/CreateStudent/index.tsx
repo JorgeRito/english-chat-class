@@ -85,11 +85,11 @@ export function CreateUserForm() {
         </select>
         <button type="submit">Crear Usuario</button>
       </form>
-      <StudentsTable
+      {/* <StudentsTable
         updateButton={update}
         onDelete={handleDelete}
         onSave={handleSave}
-      />
+      /> */}
     </div>
   );
 }

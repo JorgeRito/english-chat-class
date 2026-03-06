@@ -30,6 +30,25 @@
     padding: 0 28px;
     display: flex;
     align-items: center;
+    gap: 16px;
+}
+
+.content-container__header-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.content-container__header-back:hover {
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .content-container__cards {
@@ -40,4 +59,9 @@
     justify-content: center;
     align-content: center;
     align-items: center;
+}
+
+.content-container__body {
+    flex: 1;
+    
 }

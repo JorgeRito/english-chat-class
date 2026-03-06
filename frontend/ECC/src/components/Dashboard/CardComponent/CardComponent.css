@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+.card-container label{
+    cursor: pointer;
+}
+
 .card-container .icon{
     font-size: 40px;
     color: black;
@@ -28,5 +32,9 @@
 }
 
 .panel-option:active{
+    background-color: #b872d9;
+}
+
+.card-container:active{
     background-color: #b872d9;
 }
