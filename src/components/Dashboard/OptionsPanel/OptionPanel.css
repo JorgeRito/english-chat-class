@@ -43,6 +43,10 @@
     background-color: #b872d9;
 }
 
+.panel-option.active{
+    background-color: #b872d9;
+}
+
 .panel-option{
     box-sizing: border-box;
     width: 100%;

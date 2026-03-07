@@ -3,7 +3,7 @@ import {createRoot} from "react-dom/client";
 // import './index.css'
 import "./NewLayout.css";
 import PublicSite from "./App.tsx";
-import { Dashboard } from "../frontend/ECC/src/components/Dashboard/Dashboard.tsx";
+import {Dashboard} from "./components/Dashboard/Dashboard.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([

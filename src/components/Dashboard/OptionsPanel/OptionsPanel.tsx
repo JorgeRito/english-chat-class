@@ -23,9 +23,10 @@ export function OptionsPanel({ currentView, onSelectView }: OptionsPanelProps) {
                 </div>
                 {options.map((option: string) => {
                     const view = OPTION_TO_VIEW[option]
+                    const isActive = view !== undefined && view === currentView
                     return (
                         <div
-                            className="panel-option"
+                            className={`panel-option${isActive ? " active" : ""}`}
                             key={option}
                             role={view ? "button" : undefined}
                             tabIndex={view ? 0 : undefined}
