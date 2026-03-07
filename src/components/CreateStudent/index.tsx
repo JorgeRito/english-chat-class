@@ -1,11 +1,11 @@
 import "./form.css";
-// import StudentsTable from "../StudentsTable/StudentsTable.tsx";
-// import type {updateDataType} from "../StudentsTable/StudentsTable.tsx";
+import StudentsTable from "../StudentsTable/StudentsTable.tsx";
+import type {updateDataType} from "../StudentsTable/StudentsTable.tsx";
 import {useState} from "react";
 import {
   createUser,
-  // deleteUser,
-  // updateUser
+  deleteUser,
+  updateUser
 } from "../../api/students.service.ts";
 import type {Student} from "../../types";
 
@@ -41,21 +41,21 @@ export function CreateUserForm() {
     statusInput.value = "";
     levelSelect.value = "default";
   };
-  // const handleDelete = async (id: string) => {
-  //   await deleteUser(id);
-  //   setUpdate(!update);
-  // };
-  // const handleSave = async (id: string, updatedData: updateDataType) => {
-  //   if (updatedData) {
-  //     try {
-  //       await updateUser(id, updatedData);
-  //       setUpdate(!update);
-  //       // alert("Usuario actualizado exitosamente");
-  //     } catch (error) {
-  //       console.error("Error updating user:", error);
-  //     }
-  //   }
-  // };
+  const handleDelete = async (id: string) => {
+    await deleteUser(id);
+    setUpdate(!update);
+  };
+  const handleSave = async (id: string, updatedData: updateDataType) => {
+    if (updatedData) {
+      try {
+        await updateUser(id, updatedData);
+        setUpdate(!update);
+        // alert("Usuario actualizado exitosamente");
+      } catch (error) {
+        console.error("Error updating user:", error);
+      }
+    }
+  };
   return (
     <div>
       <form onSubmit={handleSubmit} method="post" className="form-container">
@@ -85,11 +85,11 @@ export function CreateUserForm() {
         </select>
         <button type="submit">Crear Usuario</button>
       </form>
-      {/* <StudentsTable
+      <StudentsTable
         updateButton={update}
         onDelete={handleDelete}
         onSave={handleSave}
-      /> */}
+      />
     </div>
   );
 }
