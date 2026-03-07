@@ -1,4 +1,9 @@
 import axios from "axios";
+import * as dotenv from "dotenv";
+
+const BASE_URL = "https://pfvrkfaiyeaykfuybqlz.supabase.co/rest/v1";
+
+dotenv.config();
 
 export const apiClientLocal = axios.create({
     baseURL: "http://localhost:5000",
@@ -6,6 +11,6 @@ export const apiClientLocal = axios.create({
 });
 
 export const apiClientRemote = axios.create({
-    baseURL: "",
+    baseURL: BASE_URL,
     timeout: 10000,
 })

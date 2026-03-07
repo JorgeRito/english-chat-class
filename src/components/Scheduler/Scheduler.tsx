@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import type {Student, ScheduleRecord, StudentAPI} from "../../types";
 import "../CreateStudent/form.css";
 import {getUsers} from "../../api/students.service";
+import {getRemoteStudents} from "../../api/students.service";
 import {createAppointment} from "../../api/schedule.service";
 import {mapStudentFromAPI} from "../../mapper";
 
@@ -44,7 +45,8 @@ export function Scheduler() {
 
   useEffect(() => {
     const fetchStudents = async () => {
-      const data: StudentAPI[] = await getUsers();
+      // const data: StudentAPI[] = await getUsers();
+      const data = await getRemoteStudents();
       setStudents(data.map(mapStudentFromAPI));
     };
     fetchStudents();

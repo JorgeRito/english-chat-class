@@ -1,6 +1,14 @@
 import { apiClientLocal } from "./apiClient";
 import type { Student } from "../types";
+import { apiClientRemote } from "./apiClient";
 
+// remote
+export const getRemoteStudents = async () => {
+    const response = await apiClientRemote.get(`/Students`);
+    return response.data;
+}
+
+// local
 export const getData = async () => {
     const response = await apiClientLocal.get("/get_data");
     return response.data;

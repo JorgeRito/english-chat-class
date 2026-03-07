@@ -2,7 +2,8 @@
 import {useEffect} from "react";
 import {useState} from "react";
 import "./table.css";
-import {getUsers} from "../../api/students.service";
+// import {getUsers} from "../../api/students.service";
+import {getRemoteStudents} from "../../api/students.service";
 import type {Student} from "../../types";
 import { mapStudentFromAPI } from "../../mapper";
 
@@ -24,7 +25,8 @@ export default function StudentsTable({
   const [updateData, setUpdateData] = useState<updateDataType>({});
   useEffect(() => {
     const fetchStudents = async () => {
-      const data = await getUsers();
+      // const data = await getUsers();
+      const data = await getRemoteStudents();
       console.log(data)
       setStudents(data.map(mapStudentFromAPI));
     };
