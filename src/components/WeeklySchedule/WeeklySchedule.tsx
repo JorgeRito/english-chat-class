@@ -1,5 +1,5 @@
 import "./WeeklySchecudle.css";
-import {StudentHolder} from "../WeeklySchedule/StudentHolder/StudentHolder";
+import {StudentHolder} from "./StudentHolder/StudentHolder";
 import {getData} from "../../api/students.service";
 import {useEffect, useState} from "react";
 
