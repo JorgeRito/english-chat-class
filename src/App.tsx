@@ -12,14 +12,14 @@ import {Scheduler} from "./components/Scheduler/Scheduler";
 function PublicSite() {
   return (
     <div className="container">
-      <CreateUserForm />
+      {/* <CreateUserForm /> */}
       <Header />
       <Hero />
       <Cursos />
       <Horarios />
-      <Scheduler />
+      {/* <Scheduler /> */}
       {/* <WeeklySchedule /> */}
-      <NewSchedule />
+      {/* <NewSchedule /> */}
       <Testimonios />
       <Contacto />
     </div>

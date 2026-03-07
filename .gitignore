@@ -23,8 +23,16 @@ dist-ssr
 *.sln
 *.sw?
 
-#__pycache__/
+# Python
+__pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+*.so
 
-#REST CLIENT TEST
+# Backend data (personal/sensitive)
+backend/Schedule_db.csv
+
+# REST CLIENT TEST
 REST Client.http
