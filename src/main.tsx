@@ -4,7 +4,7 @@ import {createRoot} from "react-dom/client";
 import "./NewLayout.css";
 import PublicSite from "./App.tsx";
 import {Dashboard} from "./components/Dashboard/Dashboard.tsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 const router = createBrowserRouter([
   {path : '/', element: <PublicSite/>},
