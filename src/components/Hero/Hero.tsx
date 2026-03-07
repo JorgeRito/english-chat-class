@@ -26,7 +26,7 @@ export function Hero() {
       </div>
 
       <aside className="hero-media">
-        <img src="/ecc_logo.png" alt="English Chat Class" />
+        <img src="/english-chat-class/ecc_logo.png" alt="English Chat Class" />
         <div className="media-title">Próxima clase gratuita: Mié 7:00pm</div>
         <div className="media-sub">Duración 60 min · Cupo limitado</div>
       </aside>

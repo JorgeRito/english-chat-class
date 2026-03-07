@@ -12,14 +12,14 @@ import {Header} from "./components/Header/Header";
 function PublicSite() {
   return (
     <div className="container">
-      {/* <CreateUserForm /> */}
+      <CreateUserForm />
       <Header />
       <Hero />
       <Cursos />
       <Horarios />
-      {/* <Scheduler /> */}
+      <Scheduler />
       {/* <WeeklySchedule /> */}
-      {/* <NewSchedule /> */}
+      <NewSchedule />
       <Testimonios />
       <Contacto />
     </div>
