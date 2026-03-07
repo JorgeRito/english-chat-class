@@ -1,7 +1,10 @@
 import {useEffect, useState} from "react";
-import type {Student, ScheduleRecord, StudentAPI} from "../../types";
+import type {Student, ScheduleRecord, 
+  // StudentAPI
+} from "../../types";
 import "../CreateStudent/form.css";
-import {getUsers} from "../../api/students.service";
+// import {getUsers} from "../../api/students.service";
+
 import {getRemoteStudents} from "../../api/students.service";
 import {createAppointment} from "../../api/schedule.service";
 import {mapStudentFromAPI} from "../../mapper";
