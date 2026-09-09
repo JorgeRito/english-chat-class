@@ -11,7 +11,7 @@ export function Header() {
         <div>
           <div className="brand-title">English Chat Class</div>
           <div className="brand-sub">
-            Clases de inglés · Online · Conversacional
+            Clases de inglés · Online · Presencial · Conversacional
           </div>
         </div>
       </div>
@@ -21,6 +21,7 @@ export function Header() {
         <a href="#horarios">Horarios</a>
         <a href="#testimonios">Testimonios</a>
         <a href="#contacto">Contacto</a>
+        <a href="/english-chat-class/exercises">Exercises</a>
       </nav>
     </header>
   );

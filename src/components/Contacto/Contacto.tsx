@@ -29,8 +29,8 @@ export function Contacto() {
 
         <div className="card contact-info small">
           <strong>Síguenos</strong>
-          <p>Instagram: @english_chat_class</p>
-          <p>Clases en vivo por Zoom / Google Meet</p>
+          <p>Instagram: <a href="https://www.instagram.com/english_chat_class/" target="_blank">@english_chat_class</a></p>
+          <p>Clases impartidas por Zoom</p>
           <p>¿Quieres una clase de prueba? Reserva y paga solo si te gusta.</p>
         </div>
       </div>

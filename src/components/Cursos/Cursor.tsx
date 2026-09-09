@@ -9,19 +9,34 @@ export function Cursos() {
 
       <div className="grid">
         <CursoCard
-          tipo="Conversacional"
-          precio="Desde $290 MXN / clase"
-          desc="Práctica enfocada en fluidez, vocabulario y pronunciación."
+          tipo="1 Clase"
+          precio="$150 MXN"
+          desc="Vigencia 7 dias."
         />
         <CursoCard
-          tipo="Inglés para trabajo"
-          precio="Desde $350 MXN / clase"
-          desc="Presentaciones, reuniones y correos profesionales."
+          tipo="4 Clases"
+          precio="$550 MXN"
+          desc="Vigencia 15 dias."
         />
         <CursoCard
-          tipo="Kids & Teens"
-          precio="Desde $250 MXN / clase"
-          desc="Clases interactivas para +8 años con juegos y actividades."
+          tipo="6 Clases"
+          precio="$800 MXN"
+          desc="Vigencia 15 dias"
+        />
+        <CursoCard
+          tipo="12 Clases"
+          precio="$1500 MXN"
+          desc="Vigencia 30 dias"
+        />
+        <CursoCard
+          tipo="20 Clases"
+          precio="$2500 MXN"
+          desc="Vigencia 30 dias"
+        />
+        <CursoCard
+          tipo="Clase muestra"
+          precio="$100 MXN"
+          desc="Vigencia 7 dias"
         />
       </div>
     </section>

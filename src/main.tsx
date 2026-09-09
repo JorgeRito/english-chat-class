@@ -1,15 +1,16 @@
 import {StrictMode} from "react";
 import {createRoot} from "react-dom/client";
-// import './index.css'
 import "./NewLayout.css";
 import PublicSite from "./App.tsx";
-// import * as dotenv from "dotenv";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {CreateUserForm} from "./components/CreateStudent/index.tsx";
+import { ExersicesSite } from "./components/ExercisesSite/ExercisesSite.tsx";
+const prefix = '/english-chat-class'
 
 const router = createBrowserRouter([
-  {path : '/english-chat-class', element: <PublicSite/>},
-  {path : '/english-chat-class/dashboard', element: <CreateUserForm/>}
+  {path : prefix, element: <PublicSite/>},
+  {path : `${prefix}/dashboard`, element: <CreateUserForm/>},
+  {path: `${prefix}/exercises`, element: <ExersicesSite/>}
 ])
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
