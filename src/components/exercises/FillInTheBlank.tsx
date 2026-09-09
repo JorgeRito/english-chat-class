@@ -1,5 +1,5 @@
 import QuestionCard from "../QuestionCard";
-import { ExerciseType } from "../types/Excercise.type";
+import type { ExerciseType } from "../types/Excercise.type";
 
 function FillInTheBlank({exercise}:{exercise: ExerciseType}) {
     return (
