@@ -8,11 +8,11 @@ export function Testing({title} : {title:string}) {
             </h1>
             <audio controls>
                   <source 
-                  src="/english-chat-class/sounds_eng-00381.mp3" 
+                  src="/sounds_eng-00381.mp3" 
                   type="audio/mpeg"></source>
             </audio>
             <video width="320" height="240" controls>
-                <source src="/english-chat-class/COMPA.mp4" type="video/mp4"/>
+                <source src="/COMPA.mp4" type="video/mp4"/>
             </video>
         <MultipleOptions 
         question="Question Placeholder"

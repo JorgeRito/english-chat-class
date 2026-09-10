@@ -4,7 +4,7 @@ export function Header() {
       <div className="brand">
         <img
           className="logo"
-          src="/english-chat-class/ecc_logo.png"
+          src="/ecc_logo.png"
           alt="English Chat Class"
         />
         {/* <div className="logo">EC</div> */}
@@ -21,7 +21,7 @@ export function Header() {
         <a href="#horarios">Horarios</a>
         <a href="#testimonios">Testimonios</a>
         <a href="#contacto">Contacto</a>
-        <a href="/english-chat-class/exercises">Exercises</a>
+        <a href="/exercises">Exercises</a>
       </nav>
     </header>
   );

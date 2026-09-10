@@ -5,12 +5,13 @@ import PublicSite from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {CreateUserForm} from "./components/CreateStudent/index.tsx";
 import { ExersicesSite } from "./components/ExercisesSite/ExercisesSite.tsx";
-const prefix = '/english-chat-class'
+import { AddExercise } from "./components/AddExercise/index.tsx";
 
 const router = createBrowserRouter([
-  {path : prefix, element: <PublicSite/>},
-  {path : `${prefix}/dashboard`, element: <CreateUserForm/>},
-  {path: `${prefix}/exercises`, element: <ExersicesSite/>}
+  {path : '/', element: <PublicSite/>},
+  {path : `/dashboard`, element: <CreateUserForm/>},
+  {path: `/exercises`, element: <ExersicesSite/>},
+  {path: `/add`, element: <AddExercise/>}
 ])
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

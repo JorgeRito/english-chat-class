@@ -10,7 +10,7 @@ export default function TopBanner({
     <>
       <div className="top-banner">
         <div className="logo-container">
-          <img src="/english-chat-class/ecc_logo.png" />
+          <img src="/ecc_logo.png" />
         </div>
         <div className="text-container">
           <label className="top-banner-text">

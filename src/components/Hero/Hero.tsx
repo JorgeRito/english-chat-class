@@ -26,7 +26,7 @@ export function Hero() {
       </div>
       {/* TODO: Agregar ubicacion en maps o algo por el estilo */}
       <aside className="hero-media">
-        <img src="/english-chat-class/ecc_logo.png" alt="English Chat Class" />
+        <img src="/ecc_logo.png" alt="English Chat Class" />
         
         <div className="media-title">📍Estamos ubicados en <a href="https://maps.app.goo.gl/49iygTGJbtfRY6Mz5" target="_blank">Calle Hernando de Martel #64</a></div>
         {/* <div className="media-sub">Duración 60 min · Cupo limitado</div> */}

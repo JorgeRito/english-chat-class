@@ -7,5 +7,5 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss()
   ],
-  base: '/english-chat-class/',
+  base: '/'
 })
